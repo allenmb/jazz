@@ -21,7 +21,7 @@ document.getElementById("player_submit").addEventListener("click", function (eve
                     player_id = json.data[i].id;
                     results += "<h2>" + json.data[i].first_name + " " + json.data[i].last_name + "</h2>";
                     if (json.data[i].position != "") {
-                        results += "<p>Position: " + json.data[i].position + " on the greatest team in the NBA</p>";
+                        results += "<p>Plays " + json.data[i].position + " on the greatest team in the NBA</p>";
                     }
                     break;
                 } else if (i === json.data.length - 1) {
@@ -41,7 +41,7 @@ document.getElementById("player_submit").addEventListener("click", function (eve
                     console.log(json);
                     let stats = ""
                     if (jazzman) {
-                        stats = "<h2>Last 50 Games</h2>";
+                        stats = "<h3>Last 50 Games</h3>";
                         //calculate stats
                         let total_games = 0;
                         let total_pts = 0;
@@ -84,21 +84,41 @@ document.getElementById("player_submit").addEventListener("click", function (eve
                             fg3p = total_fg3m / total_fg3a * 100;
                         }
                         // Report Stats
-                        stats += "<p> PTS  " + total_pts + "</p>";
-                        stats += "<p> REB  " + total_reb + "</p>";
-                        stats += "<p> AST  " + total_ast + "</p>";
-                        stats += "<p> BLK  " + total_blk + "</p>";
-                        stats += "<p> STL  " + total_stl + "</p>";
-                        stats += "<p> TOV  " + total_turnover + "</p>";
-                        stats += "<p> PPG  " + ppg.toFixed(1) + "</p>";
-                        stats += "<p> RPG  " + rpg.toFixed(1) + "</p>";
-                        stats += "<p> APG  " + apg.toFixed(1) + "</p>";
-                        stats += "<p> BPG  " + bpg.toFixed(1) + "</p>";
-                        stats += "<p> SPG  " + spg.toFixed(1) + "</p>";
-                        stats += "<p> A:TO " + att.toFixed(1) + "</p>";
-                        stats += "<p> FT%  " + ftp.toFixed(1) + "</p>";
-                        stats += "<p> FG%  " + fgp.toFixed(1) + "</p>";
-                        stats += "<p> FG3% " + fg3p.toFixed(1) + "</p>";
+                        stats += "<div class='table-responsive'><table class='table-sm'><tr>";
+                        stats += "<th>PPG</th>";
+                        stats += "<th>RPG</th>";
+                        stats += "<th>APG</th>";
+                        stats += "<th>FT%</th>";
+                        stats += "<th>FG%</th>";
+                        stats += "<th>3P%</th>";
+                        stats += "<th>BPG</th>";
+                        stats += "<th>SPG</th>";
+                        stats += "<th>AST/TO</th>";
+                        stats += "<th>PTS</th>";
+                        stats += "<th>REB</th>";
+                        stats += "<th>AST</th>";
+                        stats += "<th>BLK</th>";
+                        stats += "<th>STL</th>";
+                        stats += "<th>TOV</th>";
+                        stats += "</tr>";
+
+                        stats += "<tr>";
+                        stats += "<td>" + ppg.toFixed(1) + "</td>";
+                        stats += "<td>" + rpg.toFixed(1) + "</td>";
+                        stats += "<td>" + apg.toFixed(1) + "</td>";
+                        stats += "<td>" + ftp.toFixed(1) + "</td>";
+                        stats += "<td>" + fgp.toFixed(1) + "</td>";
+                        stats += "<td>" + fg3p.toFixed(1) + "</td>";
+                        stats += "<td>" + bpg.toFixed(1) + "</td>";
+                        stats += "<td>" + spg.toFixed(1) + "</td>";
+                        stats += "<td>" + att.toFixed(1) + "</td>";
+                        stats += "<td>" + total_pts + "</td>";
+                        stats += "<td>" + total_reb + "</td>";
+                        stats += "<td>" + total_ast + "</td>";
+                        stats += "<td>" + total_blk + "</td>";
+                        stats += "<td>" + total_stl + "</td>";
+                        stats += "<td>" + total_turnover + "</td>";
+                        stats += "</tr></table></div>";
                     }
                     document.getElementById("player_stats").innerHTML = stats;
                 });

@@ -1,37 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html,
 body {
-    font-family: Arial, Sans-serif;
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto';
     font-size: 18px;
     margin: 0;
-    background-color: azure;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
 }
 
-
-h1 {
-    text-align: center;
-    padding: 1em 0;
-    background-color: #E6E6E6;
-}
-
-h2,
-h3,
-h4,
-h6 {
-    text-align: center;
-}
-
-h5 {
-    padding-top: 2em;
-    text-align: center;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-p {
-    text-align: center;
-    line-height: 50%;
+.content {
+    flex: 1 0 auto;
 }
 
 form {
+    padding: 1em 0;
     margin: 0 auto;
     width: 250px;
 }
@@ -42,29 +31,71 @@ input[type=submit] {
     cursor: pointer;
 }
 
-.todayweather {
-    border-top-style: groove;
-    border-bottom-style: groove;
-    padding: 0.5em 0;
-    margin-top: 1em;
-    margin-bottom: 1em;
+h1 {
+    font-family: 'Ropa Sans';
+    color: black;
+    text-align: center;
+    padding: 1em 0;
+    background-color: #E2B500;
 }
 
-.container-fluid {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-.span2 {
+table {
+    /*display: block;*/
     margin: 1em auto;
-    padding: 1em;
-    border-style: groove;
+    width: 60%;
+    background-color: #A92913;
+}
+/*
+th {
+    background-color: #A92913;
+    text-align: center;
 }
 
-.wthr-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
+td {
+    background-color: #A92913;
+    text-align: center;
+
+}
+*/
+h2,
+h3 {
+    font-family: 'Ropa Sans';
+    text-align: center;
+}
+
+color: #FFF;
+text-align: center;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+.stats_background {
+    background-color: #A92913;
+    color: #FFF;
+    margin: 0;
+    text-align: center;
+    padding: 2em;
+}
+
+.player_background {
+    background-color: #D47205;
+    color: #FFF;
+    padding: 2em;
+    margin: 0;
+}
+
+.stripe1 {
+    background-color: #760920;
+    padding: 2em;
+}
+
+.stripe2 {
+    background-color: #2F1310;
+    padding: 2em;
+}
+
+p {
+    text-align: center;
 }
